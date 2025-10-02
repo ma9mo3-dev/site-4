@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>تسجيل مستخدم جديد</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="profile">
+    <img src="https://files.catbox.moe/1tw4dr.jpg" alt="صورة المستخدم">
+    <h1>إنشاء حساب مستخدم</h1>
+    <p class="bio">سجل لتصفح المستودعات والمحتوى</p>
+
+    <div class="section">
+      <input id="newUsername" type="text" class="input" placeholder="اسم المستخدم" />
+      <input id="newPassword" type="password" class="input" placeholder="كلمة المرور" />
+      <input id="confirmPassword" type="password" class="input" placeholder="تأكيد كلمة المرور" />
+      <label style="display: block; margin-top: 10px;">
+        <input type="checkbox" id="agreeTerms" />
+        أوافق على <a href="#">شروط الاستخدام</a>
+      </label>
+      <button onclick="createAccount()">إنشاء الحساب</button>
+      <button onclick="goToLogin()">لديك حساب؟ تسجيل الدخول</button>
+    </div>
+
+    <div class="footer">
+      &copy; 2025 Taeh Dev - جميع الحقوق محفوظة
+    </div>
+  </div>
+
+  <script>
+    function createAccount() {
+      const username = document.getElementById('newUsername').value.trim();
+      const password = document.getElementById('newPassword').value.trim();
+      const confirm = document.getElementById('confirmPassword').value.trim();
+      const agree = document.getElementById('agreeTerms').checked;
+
+      if (!username || !password || !confirm) {
+        alert("يرجى ملء جميع الحقول");
+        return;
+      }
+
+      if (password !== confirm) {
+        alert("كلمتا المرور غير متطابقتين");
+        return;
+      }
+
+      if (!agree) {
+        alert("يجب الموافقة على الشروط");
+        return;
+      }
+
+      let users = JSON.parse(localStorage.getItem('user_accounts')) || [];
+
+      if (users.find(u => u.username === username)) {
+        alert("اسم المستخدم موجود بالفعل");
+        return;
+      }
+
+      users.push({ username, password });
+      localStorage.setItem('user_accounts', JSON.stringify(users));
+      localStorage.setItem('current_user', username);
+      localStorage.setItem('current_role', 'user');
+      window.location.href = 'user.html';
+    }
+
+    function goToLogin() {
+      // يرجع للمطورين علشان ما فيش تسجيل دخول للمستخدمين لسة
+      window.location.href = 'index.html';
+    }
+  </script>
+</body>
+</html>
