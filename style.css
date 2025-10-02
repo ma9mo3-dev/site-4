@@ -1,0 +1,182 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Tajawal', sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to left, #141e30, #243b55);
+  color: #f1f1f1;
+  direction: rtl;
+}
+
+.profile {
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 25px;
+  background: #1e1e2f;
+  border-radius: 20px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
+  text-align: center;
+}
+
+.profile img {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  border: 4px solid #00e5ff;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+h1 {
+  font-size: 28px;
+  color: #00e5ff;
+  margin: 10px 0;
+}
+
+.bio {
+  font-size: 16px;
+  color: #ccc;
+  margin-bottom: 20px;
+}
+
+.section {
+  background: #2a2a40;
+  border-radius: 15px;
+  padding: 20px;
+  margin: 20px 0;
+  text-align: right;
+}
+
+.section h2 {
+  font-size: 20px;
+  margin-bottom: 15px;
+  color: #00e5ff;
+  border-bottom: 1px solid #00bcd4;
+  padding-bottom: 5px;
+}
+
+.input {
+  width: 100%;
+  padding: 12px 15px;
+  margin: 10px 0;
+  border-radius: 10px;
+  border: none;
+  background: #3b3b55;
+  color: #fff;
+  font-size: 16px;
+}
+
+button {
+  background: #00d1b2;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 15px;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background: #00bfa3;
+}
+
+.footer {
+  text-align: center;
+  font-size: 14px;
+  margin-top: 30px;
+  color: #aaa;
+}
+
+.repo-item {
+  background: #3b3b55;
+  border-radius: 10px;
+  padding: 15px;
+  margin: 10px 0;
+  position: relative;
+}
+
+.repo-item h3 {
+  margin: 0 0 10px;
+  color: #ffabff;
+}
+
+.repo-item p {
+  margin: 5px 0;
+  color: #ccc;
+}
+
+.repo-options {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.repo-options button {
+  background: #ff5555;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 8px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.options-btn {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  color: #ccc;
+  cursor: pointer;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: -250px;
+  width: 250px;
+  height: 100%;
+  background: #1e1e2f;
+  padding: 20px;
+  transition: right 0.3s ease;
+  z-index: 999;
+}
+
+.sidebar.open {
+  right: 0;
+}
+
+.sidebar button {
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
+  background: #3b3b66;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.sidebar button:hover {
+  background: #4b4b80;
+}
+
+@media (max-width: 600px) {
+  .profile {
+    margin: 15px;
+    padding: 15px;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  .input, button {
+    font-size: 14px;
+  }
+    }
