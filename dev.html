@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>لوحة المطور</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="dev.js" defer></script>
+</head>
+<body>
+  <div class="profile">
+    <h1>لوحة المطور</h1>
+    <p class="bio">قم بإدارة مستودعاتك ومشاركة مشاريعك</p>
+
+    <button onclick="toggleSidebar()">☰ القائمة</button>
+
+    <div id="myRepos"></div>
+
+    <div class="footer">
+      &copy; 2025 Taeh Dev Platform
+    </div>
+  </div>
+
+  <!-- الشريط الجانبي -->
+  <div id="sidebar" class="sidebar">
+    <button onclick="openRepoForm()">➕ مستودع جديد</button>
+    <button onclick="logout()">🚪 تسجيل خروج</button>
+  </div>
+
+  <!-- نافذة إنشاء مستودع -->
+  <div id="repoForm" class="profile" style="display: none; max-width: 500px;">
+    <h2>إنشاء مستودع جديد</h2>
+    <input id="repoName" class="input" placeholder="اسم المستودع" />
+    <input id="repoDesc" class="input" placeholder="وصف المستودع" />
+    <input id="repoDev" class="input" placeholder="اسم المطور" />
+    <button onclick="submitRepo()">نشر المحتوى</button>
+    <button onclick="cancelRepo()">إلغاء</button>
+  </div>
+</body>
+                                             </html>
