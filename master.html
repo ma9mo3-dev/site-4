@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>لوحة المطور الأساسي</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="master.js" defer></script>
+</head>
+<body>
+  <div class="profile">
+    <h1>لوحة المطور الأساسي</h1>
+    <p class="bio">هنا يمكنك إدارة الرسائل والإعلانات والتحكم بالحسابات</p>
+
+    <button onclick="toggleSidebar()">☰ القائمة</button>
+
+    <div id="content"></div>
+
+    <div class="footer">
+      &copy; 2025 Taeh Master Platform
+    </div>
+  </div>
+
+  <!-- الشريط الجانبي -->
+  <div id="sidebar" class="sidebar">
+    <button onclick="sendMessage()">📢 إعلان للمستخدمين</button>
+    <button onclick="sendRepoMessage()">📢 إعلان لموقع المطورين</button>
+    <button onclick="deleteAccount()">❌ حذف حسابك</button>
+    <button onclick="listUsers()">👥 لائحة المشتركين</button>
+  </div>
+</body>
+</html>
